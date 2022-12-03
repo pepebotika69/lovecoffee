@@ -28,4 +28,4 @@ class Brand(TimeStampedModel):
         ]
 
     def __str__(self):
-        return f'{self.name}({self.pk})'
+        return f'{self.name}(pk: {self.pk})'

@@ -27,4 +27,4 @@ class CoffeeAddress(TimeStampedModel):
         ]
 
     def __str__(self):
-        return f'{self.address}({self.pk})'
+        return f'{self.address}(pk: {self.pk} brand_id: {self.brand_id})'

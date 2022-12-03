@@ -13,4 +13,4 @@ class State(TimeStampedModel):
         verbose_name_plural = _('Provincias')
 
     def __str__(self):
-        return f'{self.name}({self.pk})'
+        return f'{self.name}(pk: {self.pk})'
