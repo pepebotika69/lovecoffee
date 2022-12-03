@@ -60,7 +60,10 @@ ROOT_URLCONF = 'lovecoffee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [
+            # BASE_DIR / 'templates'#TODO why does not work
+            'lovecoffee/templates'
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
