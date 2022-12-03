@@ -9,7 +9,7 @@ def index(request):
     html = f'''
     <html>
         <body>
-            <h1>Hello!</h1>
+            <h1>Hello, waka-waka!</h1>
             <p>The current time is {now}.</p>
         </body>
     </html>

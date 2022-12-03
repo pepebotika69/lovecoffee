@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 
-from coffee.views import index
+from coffee.views.brand import index
 
 urlpatterns = [
-    path('', index),
+    path('brand/', index),
 ]
