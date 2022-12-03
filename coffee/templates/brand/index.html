@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Hello, waka-waka -chaka-chaka!</h1>
+    {% for brand in brands %}
+        <p>The current brand is {{ brand.name }}.</p>
+    {% endfor %}
+
+{% endblock %}
+
+

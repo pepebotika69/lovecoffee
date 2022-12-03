@@ -18,5 +18,5 @@ from django.urls import path
 from coffee.views.brand import index
 
 urlpatterns = [
-    path('brand/', index),
+    path('brand/', index, name='brand-list'),
 ]
