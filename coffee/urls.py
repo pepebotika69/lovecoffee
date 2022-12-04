@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.urls import path
 
+from coffee.views import coffee
 from coffee.views.brand import index
 
 urlpatterns = [
     path('brand/', index, name='brand-list'),
+    path('coffee/', coffee.index, name='coffee-list'),
 ]
