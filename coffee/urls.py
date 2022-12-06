@@ -20,5 +20,6 @@ from coffee.views.brand import index
 
 urlpatterns = [
     path('brand/', index, name='brand-list'),
+
     path('coffee/', coffee.index, name='coffee-list'),
 ]
