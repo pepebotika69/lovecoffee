@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from lovecoffee.views.basic import index
+from lovecoffee.views.basic import index, about, services
 
 urlpatterns = [
-    path('', index),  # TODO remove this
+    path('', index),
+    path('about/', about),
+    path('services/', services),
+
     path('admin/', admin.site.urls),
+
     path('coffee/', include('coffee.urls')),
 ]
