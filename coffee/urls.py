@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.urls import path
 
+from coffee.views import brand
 from coffee.views import coffee
-from coffee.views.brand import index
+from coffee.views import entity
 
 urlpatterns = [
-    path('brand/', index, name='brand-list'),
+    path('brand/', brand.index, name='brand-list'),
 
     path('coffee/', coffee.index, name='coffee-list'),
+
+    path('entity/', entity.index, name='entity-list'),
 ]
