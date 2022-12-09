@@ -36,7 +36,7 @@ class LegalEntity(TimeStampedModel):
     comment = models.TextField(verbose_name=_('Comentario'), null=True, blank=True)
 
     # we cant turn off this rating
-    is_active = models.BooleanField(verbose_name=_('Activo'), default=True)
+    is_active = models.BooleanField(verbose_name=_('Activo'), default=False)
 
     class Meta:
         verbose_name = _('Calificación de entidad')
