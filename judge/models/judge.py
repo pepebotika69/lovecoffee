@@ -23,3 +23,10 @@ class Judge(models.Model):
     can_rank = models.BooleanField(verbose_name=_('Puede calificar?'), default=False)
 
     is_active = models.BooleanField(verbose_name=_('Activo'), default=False)
+
+    class Meta:
+        verbose_name = _('Juez')
+        verbose_name_plural = _('Jueces')
+
+    def __str__(self):
+        return f'{self.user.username} (user pk: {self.user_id})'
