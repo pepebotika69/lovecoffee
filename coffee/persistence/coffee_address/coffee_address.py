@@ -5,5 +5,5 @@ from coffee.models.coffee_address import CoffeeAddress as CoffeeAddressModel
 
 class CoffeeAddress:
     @staticmethod
-    def get_entities() -> QuerySet:
+    def get_coffees() -> QuerySet:
         return CoffeeAddressModel.objects.filter()
