@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'coffee',
     'common',
-    'judge'
+    'judge',
+    'rating'
 ]
 
 MIDDLEWARE = [
