@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Judge(models.Model):
-    user = models.OneToOneField(User, verbose_name=_('Usuario'), related_name='user', on_delete=models.RESTRICT)
+    user = models.ForeignKey(User, verbose_name=_('Usuario'), related_name='user', on_delete=models.RESTRICT)
 
     # TODO suares maybe use float
     reputation = models.IntegerField(
