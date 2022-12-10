@@ -17,12 +17,12 @@ from django.urls import path
 
 from coffee.views import brand
 from coffee.views import coffee
-from coffee.views import entity
+from coffee.views import legal_entity
 
 urlpatterns = [
     path('brand/', brand.index, name='brand-list'),
 
     path('coffee/', coffee.index, name='coffee-list'),
 
-    path('entity/', entity.index, name='entity-list'),
+    path('entity/', legal_entity.index, name='entity-list'),
 ]
