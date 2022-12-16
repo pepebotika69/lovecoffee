@@ -8,8 +8,8 @@ class Profile(APIView):
 
     @staticmethod
     @login_required(login_url='/judge/login/')
-    # TODO getting error if not logged
     def get(request):
+        # TODO getting error if not logged
         return render(
             request,
             'profile/profile.html'
