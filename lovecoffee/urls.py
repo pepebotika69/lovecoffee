@@ -27,4 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('coffee/', include('coffee.urls')),
+
+    path('judge/', include('judge.urls')),
 ]
