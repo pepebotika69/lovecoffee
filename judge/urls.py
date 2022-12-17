@@ -10,5 +10,4 @@ urlpatterns = {
     path('logout/', Logout.as_view(), name='judge-logout'),
 
     path('profile/', Profile.as_view(), name='judge-profile'),
-
 }

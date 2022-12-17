@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
-from lovecoffee.views.basic import index, about, services, contact
+from lovecoffee.views.basic import contact
 
 urlpatterns = [
-    path('', index),
-    path('about/', about),
-    path('services/', services),
+    path('', TemplateView.as_view(template_name='basic/index.html')),
+    path('about/', TemplateView.as_view(template_name='basic/about.html')),
+    path('services/', TemplateView.as_view(template_name='basic/services.html')),
     path('contact/', contact),
 
     path('admin/', admin.site.urls),
