@@ -20,14 +20,14 @@ from django.views.generic import TemplateView
 from lovecoffee.views.basic import contact
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='basic/index.html')),
-    path('about/', TemplateView.as_view(template_name='basic/about.html')),
-    path('services/', TemplateView.as_view(template_name='basic/services.html')),
-    path('contact/', contact),
+    path('', TemplateView.as_view(template_name='basic/index.html'), name='lovecoffee-home'),
+    path('about/', TemplateView.as_view(template_name='basic/about.html'), name='lovecoffee-about'),
+    path('services/', TemplateView.as_view(template_name='basic/services.html'), name='lovecoffee-services'),
+    path('contact/', contact, name='lovecoffee-contact'),
 
     path('admin/', admin.site.urls),
 
-    path('coffee/', include('coffee.urls')),
+    path('coffee/', include('coffee.urls', namespace='coffee')),
 
-    path('judge/', include('judge.urls')),
+    path('judge/', include('judge.urls', namespace='judge'))
 ]
