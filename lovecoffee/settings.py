@@ -134,6 +134,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 if 'DEV' == os.getenv('ENV'):
+    # TODO suares видимо из-за этого падает
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')
     ]
