@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <form action="/judge/login/" method="post"
+                        <form action="{% url 'judge:login' %}" method="post"
                               role="form" {% comment %}class="php-email-form"{% endcomment %}>
                             {% csrf_token %}
                             <div class="row form-group">

@@ -62,8 +62,11 @@
                             <div class="icon-box icon-box-pink">
                                 <div class="icon"><i class="bx bxl-dribbble"></i></div>
                                 <h4 class="title">
-                                    <a href="/coffee/coffee/?brand_id={{ brand.pk }}">{{ brand.name }}</a>
+                                    <a href="{% url 'coffee:brand-detail' pk=brand.pk %}">{{ brand.name }}</a>
                                 </h4>
+                                <a href="{% url 'coffee:coffee-list' %}?brand_id={{ brand.pk }}">
+                                    Go to brand coffees
+                                </a>
                                 <p class="description">{{ brand.legal_entity.name }}</p>
                             </div>
                         </div>

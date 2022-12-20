@@ -12,3 +12,13 @@ def index(request):
             'brands': BrandFilter(request.GET, queryset=Brand.get_brands()).qs
         }
     )
+
+
+def detail(request, pk):
+    return render(
+        request,
+        'brand/detail.html',
+        {
+            'brands': BrandFilter(request.GET, queryset=Brand.get_brands()).qs
+        }
+    )

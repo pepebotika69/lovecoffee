@@ -12,3 +12,13 @@ def index(request):
             'coffees': CoffeeAddressFilter(request.GET, queryset=CoffeeAddress.get_coffees()).qs
         }
     )
+
+
+def detail(request, pk):
+    return render(
+        request,
+        'coffee/detail.html',
+        {
+            'coffees': CoffeeAddressFilter(request.GET, queryset=CoffeeAddress.get_coffees()).qs
+        }
+    )

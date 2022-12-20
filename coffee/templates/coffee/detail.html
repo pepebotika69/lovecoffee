@@ -57,16 +57,12 @@
         <section class="services">
             <div class="container">
                 <div class="row">
-                    {% for entity in entities %}
+                    {% for coffee in coffees %}
                         <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
                             <div class="icon-box icon-box-pink">
-                                <div class="icon"><i class="bx bxl-dribbble"></i></div>
                                 <h4 class="title">
-                                    <a href="{% url 'coffee:entity-detail' pk=entity.pk %}">{{ entity.name }}</a>
+                                    <p>TTTTTTTTTTTTTTTTTTTTTTTTT</p>
                                 </h4>
-                                <a href="{% url 'coffee:brand-list' %}?legal_entity_id={{ entity.pk }}">
-                                    Go to entity brands
-                                </a>
                             </div>
                         </div>
                     {% endfor %}

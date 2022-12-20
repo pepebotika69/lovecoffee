@@ -19,10 +19,15 @@ from coffee.views import brand
 from coffee.views import coffee
 from coffee.views import legal_entity
 
+app_name = 'coffee'
+
 urlpatterns = [
+    path('entity/', legal_entity.index, name='entity-list'),
+    path('entity/<int:pk>/', legal_entity.detail, name='entity-detail'),
+
     path('brand/', brand.index, name='brand-list'),
+    path('brand/<int:pk>/', brand.detail, name='brand-detail'),
 
     path('coffee/', coffee.index, name='coffee-list'),
-
-    path('entity/', legal_entity.index, name='entity-list'),
+    path('coffee/<int:pk>/', coffee.detail, name='coffee-detail')
 ]

@@ -61,7 +61,14 @@
                         <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
                             <div class="icon-box icon-box-pink">
                                 <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                <h4 class="title"><a href="">{{ coffee.brand.name }}</a></h4>
+                                <h4 class="title">
+                                    <a href="{% url 'coffee:coffee-detail' pk=coffee.pk %}">Go to coffee</a>
+                                </h4>
+                                <h4 class="title">
+                                    <a href="{% url 'coffee:brand-detail' pk=coffee.brand_id %}">
+                                        {{ coffee.brand.name }}
+                                    </a>
+                                </h4>
                                 <p class="description">{{ coffee.city.name }}, {{ coffee.address }}</p>
                             </div>
                         </div>

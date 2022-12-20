@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from rest_framework.views import APIView
 
 
@@ -11,7 +12,7 @@ class Login(APIView):
     @staticmethod
     def get(request):
         if request.user.is_authenticated:
-            return HttpResponseRedirect('/judge/profile/')
+            return HttpResponseRedirect(reverse('judge:profile'))
 
         return render(
             request,
@@ -21,12 +22,12 @@ class Login(APIView):
     @staticmethod
     def post(request):
         if request.user.is_authenticated:
-            return HttpResponseRedirect('/judge/profile/')
+            return HttpResponseRedirect(reverse('judge:profile'))
 
         user: User = authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None and user.is_active:
             login(request, user)
-            return HttpResponseRedirect('/judge/profile/')
+            return HttpResponseRedirect(reverse('judge:profile'))
 
 
 class Logout(APIView):
@@ -35,4 +36,4 @@ class Logout(APIView):
     @staticmethod
     def get(request):
         logout(request)
-        return HttpResponseRedirect('/judge/login/')
+        return HttpResponseRedirect(reverse('judge:login'))

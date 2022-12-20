@@ -12,3 +12,13 @@ def index(request):
             'entities': LegalEntityFilter(request.GET, queryset=LegalEntity.get_entities()).qs
         }
     )
+
+
+def detail(request, pk):
+    return render(
+        request,
+        'entity/detail.html',
+        {
+            'entities': LegalEntityFilter(request.GET, queryset=LegalEntity.get_entities()).qs
+        }
+    )
