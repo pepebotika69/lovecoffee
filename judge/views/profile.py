@@ -1,14 +1,14 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import render
 from rest_framework.views import APIView
 
 
-class Profile(APIView):
+class Profile(APIView, PermissionRequiredMixin):
     """Profile"""
 
     @staticmethod
-    @login_required(login_url='/judge/login/')
     def get(request):
+        print(f'###########################')
         # TODO getting error if not logged
         return render(
             request,
