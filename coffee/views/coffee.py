@@ -21,7 +21,7 @@ class CoffeeListView(ListView):
     model = CoffeeAddressModel
     template_name = 'coffee/list.html'
     context_object_name = 'coffees'
-
+    paginate_by = 2
 
 class CoffeeDetailView(DetailView):
     model = CoffeeAddressModel

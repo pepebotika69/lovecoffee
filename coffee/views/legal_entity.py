@@ -22,6 +22,7 @@ class EntityListView(ListView):
     model = LegalEntityModel
     template_name = 'entity/list.html'
     context_object_name = 'entities'
+    paginate_by = 1
 
 
 class EntityDetailView(DetailView):

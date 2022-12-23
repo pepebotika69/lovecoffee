@@ -22,6 +22,7 @@ class BrandListView(ListView):
     model = BrandModel
     template_name = 'brand/list.html'
     context_object_name = 'brands'
+    paginate_by = 1
 
 
 class BrandDetailView(DetailView):
