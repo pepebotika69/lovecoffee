@@ -29,5 +29,7 @@ urlpatterns = [
 
     path('coffee/', include('coffee.urls', namespace='coffee')),
 
-    path('judge/', include('judge.urls', namespace='judge'))
+    path('judge/', include('judge.urls', namespace='judge')),
+
+    path('rating/', include('rating.urls', namespace='rating'))
 ]
