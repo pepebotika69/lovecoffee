@@ -12,7 +12,7 @@ class Login(APIView):
     @staticmethod
     def get(request):
         if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('judge:profile'))
+            return HttpResponseRedirect(reverse('judge:profile-show'))
 
         return render(
             request,
@@ -22,12 +22,12 @@ class Login(APIView):
     @staticmethod
     def post(request):
         if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('judge:profile'))
+            return HttpResponseRedirect(reverse('judge:profile-show'))
 
         user: User = authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None and user.is_active:
             login(request, user)
-            return HttpResponseRedirect(reverse('judge:profile'))
+            return HttpResponseRedirect(reverse('judge:profile-show'))
 
 
 class Logout(APIView):
