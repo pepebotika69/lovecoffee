@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block content %}
-    <p>Welcome, {{ user.username }}.</p>
-    <p>Reputation, {{ user.judge.reputation }}.</p>
-
+    <main id="main">
+        <section class="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 d-flex align-items-stretch" data-aos="fade-up">
+                        <p>Welcome, {{ user.username }}.</p>
+                        <p>Reputation, {{ user.judge.reputation }}.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
