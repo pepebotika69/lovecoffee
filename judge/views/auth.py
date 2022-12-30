@@ -23,6 +23,7 @@ class LoginFormView(FormView):
             # TODO suares может быть нужно сделать через success_url
             return HttpResponseRedirect(reverse('judge:profile-show'))
 
+        # TODO suares походу сделано не очень, то есть если все ок то делаем редирект, зачем тогда этот return
         return super().form_valid(form)
 
 
