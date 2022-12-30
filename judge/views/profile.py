@@ -11,7 +11,7 @@ from judge.service.views.common.profile import ProfileCommon
 class ProfileDetailView(UserAccessMixin, DetailView):
     model = JudgeModel
     template_name = 'profile/profile.html'
-    permission_required = 'judge.view_judge'
+    permission_required = ('judge.view_judge',)
 
     def get_object(self, queryset=None):
         return ProfileCommon.get_judge(self.request.user)
@@ -21,7 +21,7 @@ class UpdateProfileView(UserAccessMixin, UpdateView):
     model = JudgeModel
     form_class = JudgeEditForm
     template_name = 'profile/profile-edit.html'
-    permission_required = 'judge.change_judge'
+    permission_required = ('judge.change_judge',)
 
     def get_success_url(self):
         return reverse('judge:profile-show')
