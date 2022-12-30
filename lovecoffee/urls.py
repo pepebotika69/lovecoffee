@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-from lovecoffee.views.basic import contact
+from lovecoffee.views.basic import ContactFormView
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='basic/index.html'), name='lovecoffee-home'),
     path('about/', TemplateView.as_view(template_name='basic/about.html'), name='lovecoffee-about'),
     path('services/', TemplateView.as_view(template_name='basic/services.html'), name='lovecoffee-services'),
-    path('contact/', contact, name='lovecoffee-contact'),
+    path('contact/', ContactFormView.as_view(), name='lovecoffee-contact'),
 
     path('admin/', admin.site.urls),
 
