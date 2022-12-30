@@ -1,39 +1,34 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
 from django.urls import reverse
-from rest_framework.views import APIView
+from django.views.generic.base import RedirectView
+from django.views.generic.edit import FormView
+
+from judge.forms.login import LoginForm
 
 
-class Login(APIView):
-    """Login"""
+class LoginFormView(FormView):
+    template_name = 'profile/login.html'
+    form_class = LoginForm
 
-    @staticmethod
-    def get(request):
-        if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('lovecoffee-home'))
+    # TODO suares надо понять как использовать это
+    # success_url = reverse('judge:profile-show')
 
-        return render(
-            request,
-            'profile/login.html'
-        )
+    def form_valid(self, form):
+        user: User = authenticate(username=self.request.POST['username'], password=self.request.POST['password'])
 
-    @staticmethod
-    def post(request):
-        if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('lovecoffee-home'))
-
-        user: User = authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None and user.is_active:
-            login(request, user)
+            login(self.request, user)
+            # TODO suares может быть нужно сделать через success_url
             return HttpResponseRedirect(reverse('judge:profile-show'))
 
+        return super().form_valid(form)
 
-class Logout(APIView):
-    """Logout"""
 
-    @staticmethod
-    def get(request):
-        logout(request)
-        return HttpResponseRedirect(reverse('judge:login'))
+class LogoutRedirectView(RedirectView):
+    pattern_name = 'judge:login'
+
+    def get_redirect_url(self, *args, **kwargs):
+        logout(self.request)
+        return super().get_redirect_url(*args, **kwargs)
